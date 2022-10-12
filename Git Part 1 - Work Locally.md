@@ -30,7 +30,6 @@ $ git status                                  # What files have been changed
 $ git status -s                               # Show what has been changed in compact list
 $ git commit -m "My First Commit"             # Commit
 $ git commit -a -m "some msg"                 # Add files + commit in one command
-$ git commit --amend "new commit message"     # change last commit msg
 $ git log                                     # See all your commits
 $ git log --pretty=oneline                    # See the changes in one compact line
 $ git log --oneline                           # Compact list of commits

@@ -4,22 +4,23 @@
     $ Create a new repository in github.com and paste it's instruction:
     $ cd My-NEW-Repository
     $ git init
-    $ git add README.md or git add .
+    $ # Add files (README.md, LICENSE.md)
+    $ git add .
     $ git commit -m "First Commit"
     $ git remote add origin https://github.com/ilsh1964/My-NEW-Repository.git
     $ git push -u origin master
 
 
-## Deleting files on github
-    $ git add . -A
-    $ git commit -m "removed some files"
+## Updating git with new\updated files
+    $ git add My_Changed_File \ git add -A
+    $ git commit -m "My commit explanation"
     $ git push origin master
 
 
-## Updating git with updated files
-    $ git add My_Changed_File  or git add .
-    $ git commit -m "My commit explanation"
-    $ git push
+## Deleting files on github
+    $ git add -A
+    $ git commit -m "removed some files"
+    $ git push origin master
 
 
 ## Get changes FROM GitHub to your machine
@@ -45,7 +46,6 @@
 
 
 ## Cloning github project to your local machine
-    $ cd Dropbox/Git dir
     $ git clone git@github.com/…git
 
 
@@ -67,13 +67,9 @@ To make a branch after creating the repository:
 ## REAMRKS
 ```
 - Every repository should include README.md, LICENSE.md, and .gitignore
-- Good source: http://www.linuxandubuntu.com/home/getting-started-with-github
-- ssh -T git@github.com                     \* To check the ssh key against github
 - Branching allow you to create a separate working copy of your code
 - Merging: Allow you to merge branches together
 - Cloning: Another developer can copy your Git-Hub project
-- git clone <url>  .
-- git remote -v  show information about git
-- git branch -a
-- git pull bring all changes from last pull
+- git pull: bring all changes from last pull
+- Good source: http://www.linuxandubuntu.com/home/getting-started-with-github
 ```
