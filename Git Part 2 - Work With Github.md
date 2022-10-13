@@ -2,14 +2,14 @@
 
 ## Creating new project
     $ Create a new repository in github.com and paste it's instruction:
-    $ cd My-NEW-Repository
+    $ mkdir my-project && cd my-project
     $ git init
-    $ # Add files (README.md, LICENSE.md)
-    $ git add .
+    $ git add -A (or add specific files: git add README.md)
     $ git commit -m "First Commit"
-    $ git remote add origin https://github.com/ilsh1964/My-NEW-Repository.git
-    $ git push -u origin master
-
+    $ git branch -M main
+    $ git remote add origin git@github.com:ilsh1964/my-project.git
+    $ git push -u origin main
+        
 
 ## Updating git with new\updated files
     $ git add My_Changed_File \ git add -A
