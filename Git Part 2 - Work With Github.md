@@ -9,6 +9,9 @@
     $ git branch -M main
     $ git remote add origin git@github.com:ilsh1964/my-project.git
     $ git push -u origin main
+    $ git push -f origin main
+        if you have an error and you want to force the push command
+     
         
 
 ## Updating git with new\updated files
