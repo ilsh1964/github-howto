@@ -36,6 +36,7 @@
     $ git tag                              # To show all tags
     $ git tag -a v1.01 -m 'version 1.01'   # To add new tag (follow with the next command)
     $ git push --tags                      # To push the new tag to github.com
+    $ git tag --delete v1.1
     $ git tag -d v1.01                     # To delete tag (follow with the next command)
     $ git push origin :refs/tags/v1.01     # Update github.com with previous tag deleting
     $ git tag -l v1.0*                     # Search tags via wildcard
