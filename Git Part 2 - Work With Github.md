@@ -27,9 +27,9 @@
 
 
 ## Get changes FROM GitHub to your machine
-    $ git checkout
-    $ git pull
-
+    $ git checkout (command is used to switch, and optionally create, to a branch.
+    $ git pull (combination of two commands: "git fetch" which downloads changes, "git merge" which merge changes 
+   
 
 ## Tags and Diff
     $ cd project_dir
@@ -51,6 +51,9 @@
 
 ## Cloning github project to your local machine
     $ git clone git@github.com/…git
+
+## Cloning a Private github repo (using ssh key)
+    $ git clone git@github.com:ilsh1964/my-config.git
 
 
 ## BRANCH
