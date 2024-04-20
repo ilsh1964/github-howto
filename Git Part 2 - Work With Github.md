@@ -71,6 +71,16 @@ To make a branch after creating the repository:
 5. By now two branches have been created; master and your new name branch
 ```
 
+## Delete Your Commit History
+```
+git checkout --orphan temp_branch
+git add -A
+git commit -m "Initial commit"
+git branch -D main
+git branch -m main
+git push --force origin main
+```
+
 ## REAMRKS
 ```
 - Every repository should include README.md, LICENSE.md, and .gitignore
