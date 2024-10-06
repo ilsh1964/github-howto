@@ -30,6 +30,15 @@
     $ git checkout (command is used to switch, and optionally create, to a branch.
     $ git pull (combination of two commands: "git fetch" which downloads changes, "git merge" which merge changes 
    
+## Delete old Github commits (clean-up the repo)
+    $ git clone git@github.com:ilsh1964/repo_name
+    $ cd repo_name
+    git checkout --orphan new_branch
+    git add .
+    git commit -m "First commit"
+    git branch -D main
+    git branch -m main 
+    git push -f origin main
 
 ## Tags and Diff
     $ cd project_dir
