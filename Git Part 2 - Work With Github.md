@@ -29,17 +29,8 @@
 ## Get changes FROM GitHub to your machine
     $ git checkout (command is used to switch, and optionally create, to a branch.
     $ git pull (combination of two commands: "git fetch" which downloads changes, "git merge" which merge changes 
-   
-## Delete old Github commits (clean-up the repo)
-    $ git clone git@github.com:ilsh1964/repo_name
-    $ cd repo_name
-    git checkout --orphan new_branch
-    git add .
-    git commit -m "First commit"
-    git branch -D main
-    git branch -m main 
-    git push -f origin main
 
+   
 ## Tags and Diff
     $ cd project_dir
     $ git tag                              # To show all tags
@@ -61,6 +52,7 @@
 ## Cloning github project to your local machine
     $ git clone git@github.com/…git
 
+
 ## Cloning a Private github repo (using ssh key)
     $ git clone git@github.com:ilsh1964/my-config.git
 
@@ -80,7 +72,7 @@ To make a branch after creating the repository:
 5. By now two branches have been created; master and your new name branch
 ```
 
-## Delete Your Commit History
+## Delete Your Commit History (clean-up the repo)
 ```
 git checkout --orphan temp_branch
 git add -A
@@ -88,6 +80,13 @@ git commit -m "Initial commit"
 git branch -D main
 git branch -m main
 git push --force origin main
+```
+
+## Stop Monitoring A File 
+```
+git rm --cached <file_name>  (--cached: do not delete the file locally)
+Add the file to .gitignore
+git commit -m "Stop tracking <file_name>"
 ```
 
 ## REAMRKS
