@@ -87,6 +87,14 @@ git push --force origin main
 git rm --cached <file_name>  (--cached: do not delete the file locally)
 Add the file to .gitignore
 git commit -m "Stop tracking <file_name>"
+
+Example:
+Stop monitoring: .local/share/fish/fish_history
+add .local/share/fish/fish_history to .gitignore
+
+if the file is already tracked by Git:
+git rm --cached .local/share/fish/fish_history
+
 ```
 
 ## REAMRKS
