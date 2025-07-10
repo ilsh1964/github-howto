@@ -21,8 +21,6 @@ $ git add -A dir_name/                        # Add all changes in dir_name/ to 
 $ git add -u                                  # Add only changed and removed files (not new) to the staging area
 $ git add *.txt                               # Add all *.txt files to the stage area
 $ git add FILENAME                            # Add FILENAME again
-$ git reset FILENAME                          # Remove file from staging area
-$ git reset                                   # Remove all files from staging area
 $ git rm --cached FILENAME                    # To untrack FILENAME (remove from staging area)
 $ git rm -f FILENAME                          # Delete FILENAME from os
 $ git mv XXX YYY                              # Rename filename XXX to YYY
@@ -36,6 +34,23 @@ $ git log --oneline                           # Compact list of commits
 $ git checkout SHA_NUMBER                     # go to previous version of the file
 ```
 
+## Git reset
+```
+$ git reset FILENAME                          # Remove file from staging area
+$ git reset                                   # Remove all files from staging area
+
+$ git log                                     # write the desire commit-log-id
+$ git reset --soft commit-id                  # Keeps all changes made after that commit in the staging area 
+$ git reset --hard commit-id                  # Discards all changes in the staging area and in the working directory that happened after that commit
+```
+
+## Git stash
+```
+$ git stash                                   # Save all current changes
+$ git stash list                              # Get list of all stashes
+$ git stash pop                               # Pop last stashed files
+
+```
 
 ## Diff
 ```
