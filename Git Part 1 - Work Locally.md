@@ -40,8 +40,9 @@ $ git reset FILENAME                          # Remove file from staging area
 $ git reset                                   # Remove all files from staging area
 
 $ git log                                     # write the desire commit-log-id
-$ git reset --soft commit-id                  # Keeps all changes made after that commit in the staging area 
+$ git reset --soft commit-id                  # Keeps all changes made after that commit in the staging area
 $ git reset --hard commit-id                  # Discards all changes in the staging area and in the working directory that happened after that commit
+$ git reset commit-id (eqvivalent to --mixed) # Unstages all files from the staging area, Keeps your working directory unchanged)
 ```
 
 ## Git stash
@@ -106,8 +107,8 @@ $ git branch                                  # Show all brances
 $ git branch proj_v2                          # Create a new brand called proj_v2
 $ git checkout proj_v2                        # Working with the new branch
 $ git checkout -b proj_v2                     # Create a new branch and jump to it
-$ git add file1.txt                           # 
-$ git commit -m "commit in the new branch"    # 
+$ git add file1.txt                           #
+$ git commit -m "commit in the new branch"    #
 $ git checkout master                         # Go to the master branch - without file1.txt
 $ git merge proj_v2                           # Merge file1.txt from proj_v2 branch
 $ git branch -d proj_v2                       # Deleting merge  branch
@@ -125,7 +126,7 @@ ThisDir/
 
 ## Common workflow
 ```
-$ git branch new_branch_name  
+$ git branch new_branch_name
 $ git branch                                  # See all branches (*master is the activated branch)
 $ git checkout new_branch_name                # Start working with the new branch
 $ git branch                                  # See all branches. *new_branch_name is the activated branch
