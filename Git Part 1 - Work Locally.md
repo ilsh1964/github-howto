@@ -17,17 +17,21 @@ $ git help add                                # help on add command
 $ git init                                    # Create a brand new Git repository in this directory
 $ git add .                                   # Add all changes in the current directory to the stage area
 $ git add -A                                  # Add all changes (removed, modified, sub-dir, new) files to the staging area
-$ git add -A dir_name/                        # Add all changes in dir_name/ to the staging area
-$ git add -u                                  # Add only changed and removed files (not new) to the staging area
 $ git add *.txt                               # Add all *.txt files to the stage area
 $ git add FILENAME                            # Add FILENAME again
+
 $ git rm --cached FILENAME                    # To untrack FILENAME (remove from staging area)
+git restore --staged index.html               # To untrack FILENAME (remove from staging area)
+
 $ git rm -f FILENAME                          # Delete FILENAME from os
 $ git mv XXX YYY                              # Rename filename XXX to YYY
+
 $ git status                                  # What files have been changed
 $ git status -s                               # Show what has been changed in compact list
+
 $ git commit -m "My First Commit"             # Commit
 $ git commit -a -m "some msg"                 # Add files + commit in one command
+
 $ git log                                     # See all your commits
 $ git log --pretty=oneline                    # See the changes in one compact line
 $ git log --oneline                           # Compact list of commits
