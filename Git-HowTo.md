@@ -1,4 +1,4 @@
-# Working Locally With Git:
+# Working With Git (Locally):
 
 ## Creating a brand new git repository
 ```
@@ -8,8 +8,6 @@ $ git config --global user.name "YOUR_NAME"
 $ git config --global user.email "YOUR_EMAIL"
 $ git config --global core.editor "vim"       # Change the default editor
 $ git config --list                           # Show your config
-$ git help                                    # Bring all git help command
-$ git help add                                # help on add command
 ```
 
 ## Working with git
@@ -32,9 +30,6 @@ $ git status -s                               # Show what has been changed in co
 $ git commit -m "My First Commit"             # Commit
 $ git commit -a -m "some msg"                 # Add files + commit in one command
 
-$ git log                                     # See all your commits
-$ git log --pretty=oneline                    # See the changes in one compact line
-$ git log --oneline                           # Compact list of commits
 $ git checkout SHA_NUMBER                     # go to previous version of the file
 ```
 
@@ -57,13 +52,12 @@ $ git stash pop                               # Pop last stashed files
 
 ```
 
-## Diff
+## Git diff
 ```
 $ git diff                                    # See changes on files since last commit
 ```
 
-
-## Checkout
+## Git checkout
 ```
 $ git log --pretty=oneline
     b900c412b20d0ae61e4f81f3ec60766bce8f107a file1.txt: Add line 3
@@ -86,24 +80,14 @@ $ git log --pretty=oneline
 $ git checkout file1.txt                      # return file1.txt from last commit
 ```
 
-
 ## Git Log
 ```
 $ git log                                     # Shows all previous commit messages in reverse order
 $ git log --pretty=oneline                    # Shows commits on one line
-$ git log --pretty=format:"%h : %an : %ar : %s"
-                                              # %h - Abbreviated Hash
-                                              # %an - Authors Name
-                                              # %ar - Date Changed
-                                              # %s - First Line of Comment
-$ git log -p -2                               # Shows the last 2 commit changes
-$ git log --stat                              # Prints abbreviated stats
+$ git log --oneline                           # Compact list of commits
 $ git log --since=1.weeks                     # Show only changes in the last week
 $ git log --since="2014-04-12"                # Show changes since this date
-$ git log --author="Derek Banas"              # Changes made by author
-$ git log --before="2014-04-13"               # Changes made before this date
 ```
-
 
 ## Branching and Merging
 ```
@@ -111,14 +95,10 @@ $ git branch                                  # Show all brances
 $ git branch proj_v2                          # Create a new brand called proj_v2
 $ git checkout proj_v2                        # Working with the new branch
 $ git checkout -b proj_v2                     # Create a new branch and jump to it
-$ git add file1.txt                           #
-$ git commit -m "commit in the new branch"    #
 $ git checkout master                         # Go to the master branch - without file1.txt
 $ git merge proj_v2                           # Merge file1.txt from proj_v2 branch
 $ git branch -d proj_v2                       # Deleting merge  branch
-$ git branch -D proj_v2                       # Deleting dont merge  branch
 ```
-
 
 ## .gitignore  (must be in project dir - not in .git)
 ```
@@ -128,24 +108,114 @@ ThisDir/
 ```
 
 
-## Common workflow
-```
-$ git branch new_branch_name
-$ git branch                                  # See all branches (*master is the activated branch)
-$ git checkout new_branch_name                # Start working with the new branch
-$ git branch                                  # See all branches. *new_branch_name is the activated branch
-$ make changes to the source code             #
-$ git add -A                                  #
-$ git commit -m "message"                     # Commit changes to the branch (no effect to master\remote repository)
-$ git push -u origin new_branch_name          # Push this branch to remote repository
-$ git merge new_branch_name                   # Merge new_branch_name with master branch
-$ git push origin master                      # Push this branch to remote repository
-$ git branch -d new_branch_name               # Delete not needed branch
-```
+# Github:
+
+## Creating new project
+    $ Create a new repository in github.com and paste it's instruction:
+    $ mkdir my-project && cd my-project
+    $ git init
+    $ git add -A (or add specific files: git add README.md)
+    $ git commit -m "First Commit"
+    $ git branch -M main
+    $ git remote add origin git@github.com:ilsh1964/my-project.git
+    $ git push -u origin main
+    $ git push -f origin main
+        if you have an error and you want to force the push command
 
 
-## Remarks
+## Updating git with new\updated files
+    $ git add My_Changed_File \ git add -A
+    $ git commit -m "My commit explanation"
+    $ git push origin master
+
+
+## Deleting files on github
+    $ git add -A
+    $ git commit -m "removed some files"
+    $ git push origin master
+
+
+## Get changes FROM GitHub to your machine
+    $ git checkout (command is used to switch, and optionally create, to a branch.
+    $ git pull (combination of two commands: "git fetch" which downloads changes, "git merge" which merge changes
+
+
+## Tags
+    $ cd project_dir
+    $ git tag                              # To show all tags
+    $ git tag -a v1.01 -m 'version 1.01'   # To add new tag (follow with the next command)
+    $ git push --tags                      # To push the new tag to github.com
+    $ git tag --delete v1.1
+    $ git tag -d v1.01                     # To delete tag (follow with the next command)
+    $ git push origin :refs/tags/v1.01     # Update github.com with previous tag deleting
+    $ git tag -l v1.0*                     # Search tags via wildcard
+    $ git show v1.01                       # Show tag version v1.01
+
+## Diff
+    $ git diff v1.0 v1.01                  # Show diff between tag version v1.0 & v1.01
+
+
+# FAQ
+
+## Why is Git always asking for my password?
+    $ Add ~/.ssh/id_rsa.pub to your github account (menu->SSH Keys)
+    $ git remote set-url origin git+ssh://git@github.com/username/reponame.git
+
+
+## Cloning github project to your local machine
+    $ git clone git@github.com/…git
+
+
+## Cloning a Private github repo (using ssh key)
+    $ git clone git@github.com:ilsh1964/my-config.git
+
+
+## BRANCH
 ```
-- The stage area allow you to add all the time several files and commit them
-- It allows you not commit all files at ones
+Branches are a way of working on various versions of a single repository simultaneously.
+By default, any single repository created is assigned a branch called MASTER and it is considered
+the final branch.
+
+To make a branch after creating the repository:
+1. Go to your new repository by clicking on the repository name
+2. Click on the “Branch-Master” button at the top to see a drop-down menu with a blank field for
+   filling the branch name.
+3. Enter the branch name
+4. Press “Enter” or click on the blue “create- branch” box
+5. By now two branches have been created; master and your new name branch
+```
+
+## Delete Your Commit History (clean-up the repo)
+```
+git checkout --orphan temp_branch
+git add -A
+git commit -m "Initial commit"
+git branch -D main
+git branch -m main
+git push --force origin main
+```
+
+## Stop Monitoring A File
+```
+git rm --cached <file_name>  (--cached: do not delete the file locally)
+Add the file to .gitignore
+git commit -m "Stop tracking <file_name>"
+
+Example:
+Stop monitoring: .local/share/fish/fish_history
+add .local/share/fish/fish_history to .gitignore
+
+if the file is already tracked by Git:
+git rm --cached .local/share/fish/fish_history
+
+```
+
+## REAMRKS
+```
+- Every repository should include README.md, LICENSE.md, and .gitignore
+- Branching allow you to create a separate working copy of your code
+- Merging: Allow you to merge branches together
+- Cloning: Another developer can copy your Git-Hub project
+- git pull: bring all changes from last pull
+- Good source: http://www.linuxandubuntu.com/home/getting-started-with-github
 ```
